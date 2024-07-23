@@ -1,0 +1,77 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-3 bg-white rounded sticky-top"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/places">
+      <i class="fa-solid fa-house"></i> FindAStay
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/places">Home</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/places">All Places</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="/places/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/places/new">Add New Place</a>
+        </li>
+        <% if (curruser) { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/places/myplaces">My Places</a>
+        </li>
+        <%}%>
+      </ul>
+
+      <form
+        id="searchForm"
+        class="d-none d-lg-flex"
+        role="search"
+        method="post"
+        action="/places/search"
+      >
+        <input
+          class="form-control me-2 stylish-search-input"
+          type="search"
+          id="searchQuery"
+          name="searchQ"
+          autocomplete="off"
+          placeholder="Search for places..."
+          aria-label="Search"
+        />
+        <button class="btn btn-primary stylish-search-button" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+
+      <ul class="navbar-nav ms-auto">
+        <% if (!curruser) { %>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/signup">Sign up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log in</a>
+        </li>
+        <% } else { %>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

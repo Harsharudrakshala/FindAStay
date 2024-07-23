@@ -1,0 +1,86 @@
+<% layout("/layouts/boilerplate") -%>
+<header class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <h1 class="display-4 text-center mb-4">Welcome to FindAStay</h1>
+        <p class="lead text-center mb-0">
+          Where Every Journey Meets Its Perfect Stay
+        </p>
+      </div>
+    </div>
+  </div>
+</header>
+<section class="bg-white py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mb-4">
+        <img
+          src="/images/undraw_undraw_undraw_undraw_undraw_website_o7n3_bucy_30uo_-1-_d6br_0qfo.png"
+          class="img-fluid rounded shadow-md"
+          alt="Company Image"
+        />
+      </div>
+      <div class="col-lg-6 mb-4">
+        <h2 class="mb-3">About Our Company</h2>
+        <p>
+          At FindAStay, we believe that every journey starts with a dream
+          destination. Whether you're looking for a cozy room, a luxurious
+          hotel, or a spacious apartment, our mission is to make your
+          stay-finding experience as seamless and enjoyable as possible.
+        </p>
+
+        <div id="additional-content" class="collapse">
+          <p>
+            Our vision is to build a global community where travelers can
+            discover unique places to stay, and property owners can share their
+            spaces with the world.We strive to provide a user-friendly platform
+            that offers a wide range of accommodations, from budget-friendly
+            rooms to high-end suites, ensuring there's something for every
+            traveler.
+          </p>
+          <p>
+            We invite you to be a part of the FindAStay community. Whether
+            you're adding a new place, sharing your experiences through reviews,
+            or simply browsing for your next getaway, we're here to support you
+            every step of the way.
+          </p>
+        </div>
+
+        <button class="tg btn btn-primary" onclick="toggleReadMore()">
+          Read More
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleReadMore() {
+    var content = document.getElementById("additional-content");
+    var button = document.querySelector("button.tg");
+
+    if (content.classList.contains("collapse")) {
+      content.classList.remove("collapse");
+      button.textContent = "Read Less";
+    } else {
+      content.classList.add("collapse");
+      button.textContent = "Read More";
+    }
+  }
+</script>
+
+<script>
+  function toggleReadMore() {
+    var content = document.getElementById("additional-content");
+    var button = document.querySelector("button.tg");
+
+    if (content.classList.contains("collapse")) {
+      content.classList.remove("collapse");
+      button.textContent = "Read Less";
+    } else {
+      content.classList.add("collapse");
+      button.textContent = "Read More";
+    }
+  }
+</script>

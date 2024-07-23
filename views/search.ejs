@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate") -%>
+<!-- <h3>All Places</h3> -->
+<!-- <form method="GET" action="/places/new">
+        <button>Create New Place</button>
+    </form> -->
+<% if (searchResults.length === 0) { %>
+<div class="center-message">No places found matching your search criteria.</div>
+<% } else { %>
+<div class="row row-cols-lg-3 row row-cols-md-2 row row-cols-sm-1 mt-3">
+  <% for(let place of searchResults){%>
+
+  <div class="card place-card home-pla">
+    <a href="/places/<%=place._id%>"
+      ><img
+        src="<%=place.image.url%>"
+        class="card-img-top home-img"
+        alt="place_image"
+        style="height: 18rem"
+    /></a>
+    <div class="card-body">
+      <h5 class="card-title"><%=place.title%></h5>
+      <p class="card-text">
+        Price : <%=place.price.toLocaleString("en-IN")%> / night
+      </p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>
+  <%}%>
+</div>
+<%}%>
